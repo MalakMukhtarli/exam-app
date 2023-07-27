@@ -1,6 +1,11 @@
+using ExamApp.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
 
 // Add services to the container.
+services.InstallServicesInAssembly(builder.Configuration);
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

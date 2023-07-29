@@ -6,4 +6,5 @@ public class PupilExam : CommonEntity
     public Pupil Pupil { get; set; }
     public int ExamId { get; set; }
     public Exam Exam { get; set; }
+    public byte? Mark { get; set; }
 }

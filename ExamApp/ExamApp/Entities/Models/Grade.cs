@@ -6,13 +6,13 @@ public class Grade : CommonEntity
 {
     public Grade()
     {
-        LessonGradeTeachers = new HashSet<LessonGradeTeacher>();
         PupilGrades = new HashSet<PupilGrade>();
+        LessonGrades = new HashSet<LessonGrade>();
     }
 
     [Required] public byte Value { get; set; }
     
-    public virtual ICollection<LessonGradeTeacher> LessonGradeTeachers { get; set; }
     public virtual ICollection<PupilGrade> PupilGrades { get; set; }
+    public virtual ICollection<LessonGrade> LessonGrades { get; set; }
 
 }

@@ -1,0 +1,31 @@
+﻿@model List<ExamApp.Models.Pupils.PupilViewModel>
+
+@{
+    ViewBag.Title = "title";
+    var i = 0;
+}
+
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr class="table-primary">
+            <th scope="col">#</th>
+            <th scope="col">Şagirdin nömrəsi</th>
+            <th scope="col">Şagirdin adı soyadı</th>
+            <th scope="col">Şagirdin oxuduğu sinif</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var pupil in Model)
+        {
+            <tr>
+                <th scope="row">@(++i)</th>
+                <td>@pupil.Number</td>
+                <td>@pupil.Name @pupil.Surname</td>
+                <td>@pupil.Grade</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

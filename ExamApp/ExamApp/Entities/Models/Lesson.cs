@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExamApp.Entities.Models;
 
@@ -9,8 +10,10 @@ public class Lesson : CommonEntity
         LessonGrades = new HashSet<LessonGrade>();
     }
 
-    [Required] [StringLength(3)] public char Code { get; set; }
-    [Required] [StringLength(30)] public string Name { get; set; }
+    [Required] public int Code { get; set; }
+    [Required] [StringLength(30)]         
+    [Column(TypeName = "nvarchar(30)")]
+    public string Name { get; set; }
     
     public virtual ICollection<LessonGrade> LessonGrades { get; set; }
 }

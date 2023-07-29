@@ -4,6 +4,7 @@ using ExamApp.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExamApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230729190132_EntityPropTypeChanged")]
+    partial class EntityPropTypeChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace ExamApp.Migrations
 
                     b.HasIndex("LessonGradeId");
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.Grade", b =>
@@ -92,7 +94,7 @@ namespace ExamApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grades", (string)null);
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.Lesson", b =>
@@ -131,7 +133,7 @@ namespace ExamApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Lessons", (string)null);
+                    b.ToTable("Lessons");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.LessonGrade", b =>
@@ -157,7 +159,7 @@ namespace ExamApp.Migrations
 
                     b.HasIndex("LessonId");
 
-                    b.ToTable("LessonGrade", (string)null);
+                    b.ToTable("LessonGrade");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.LessonGradeTeacher", b =>
@@ -183,7 +185,7 @@ namespace ExamApp.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("LessonGradeTeacher", (string)null);
+                    b.ToTable("LessonGradeTeacher");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.Pupil", b =>
@@ -227,7 +229,7 @@ namespace ExamApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pupils", (string)null);
+                    b.ToTable("Pupils");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.PupilExam", b =>
@@ -271,7 +273,7 @@ namespace ExamApp.Migrations
 
                     b.HasIndex("PupilId");
 
-                    b.ToTable("PupilExams", (string)null);
+                    b.ToTable("PupilExams");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.PupilGrade", b =>
@@ -297,7 +299,7 @@ namespace ExamApp.Migrations
 
                     b.HasIndex("PupilId");
 
-                    b.ToTable("PupilGrades", (string)null);
+                    b.ToTable("PupilGrades");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.Teacher", b =>
@@ -338,7 +340,7 @@ namespace ExamApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teachers", (string)null);
+                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("ExamApp.Entities.Models.Exam", b =>

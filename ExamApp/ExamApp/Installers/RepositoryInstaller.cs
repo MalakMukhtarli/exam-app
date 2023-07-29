@@ -9,6 +9,8 @@ public class RepositoryInstaller : IInstaller
     {
         services.AddScoped(typeof(IRepositoryAsync<>), typeof(RepositoryBase<>));
         services.AddScoped<IGradeRepository, GradeRepository>();
+        services.AddScoped<ILessonRepository, LessonRepository>();
+        services.AddScoped<IPupilRepository, PupilRepository>();
 
     }
 }

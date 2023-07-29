@@ -12,7 +12,7 @@ public class AdminController : Controller
     }
     
     [HttpPost]
-    public async Task<IActionResult> Create(AdminViewModel model, [FromServices] IGradeService gradeService)
+    public async Task<IActionResult> CreateGrade(AdminViewModel model, [FromServices] IGradeService gradeService)
     {
         var result = await gradeService.Create(model.Grade.Value);
 

@@ -1,0 +1,31 @@
+﻿@model List<ExamApp.Models.Grades.GradeViewModel>
+@{
+    var i = 0;
+}
+
+<div>
+    <div class="container-fluid px-5 py-5">
+
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                <tr class="table-primary">
+                    <th scope="col">#</th>
+                    <th scope="col">Sinifin nömrəsi</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                @foreach (var grade in Model)
+                {
+                    <tr>
+                        <th scope="row">@(++i)</th>
+                        <td>@grade.Value</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
